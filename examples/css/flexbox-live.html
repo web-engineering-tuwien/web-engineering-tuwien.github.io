@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    :root {
+      --standard-padding: 15px;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    #content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        align-items:stretch;
+        align-content: center;
+        height: 600px;
+    }
+
+    #content div {
+        padding: 10px;
+        margin: 4px;
+        align-self:center;
+        justify-self:center;
+        border: 1px solid black;
+        width: 100px;
+        height: 40px;
+    }
+
+    header {
+      background-color: black;
+      color: white;
+      margin: 0;      
+      padding: var(--standard-padding); 
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    section {
+      background-color: white;
+      padding: var(--standard-padding);
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      height: 50px;
+      padding: var(--standard-padding);
+    }
+
+    nav {
+      background-color: lightgray;
+      padding: var(--standard-padding);
+    }
+
+    nav ul {
+      margin: 0;  
+    }
+
+    #navigation ul {
+        list-style-type: none;
+      }
+
+      #navigation ul li {
+        display: inline;
+      }      
+
+      #navigation ul li::after {
+        content: " | ";
+      }
+
+      #navigation ul li:last-child::after {
+        content: "";
+      }          
+  </style>
+  <title>Playground</title>
+</head>
+<body>
+    <header>
+        <h1>Playground</h1>
+    </header>
+	<nav id="navigation">
+    <ul>
+      <li>Home</li>
+      <li>Animals</li>
+      <li>Events</li>
+      <li>Contact</li>
+    </ul>
+	</nav>
+	<section id="content">
+        <div>Cats</div>
+        <div>Dogs</div>
+        <div>Tigers</div>
+        <div>Tortoises</div>
+        <div>Ducks</div>
+        <div>Pumas</div>
+        <div>Hyenas</div>
+        <div>Pigs</div>
+        <div>Cows</div>
+        <div>Foxes</div>
+        <div>Wolfs</div>
+        <div>Bison</div>
+    </section>
+  <footer>
+    (c) Web Engineering
+  </footer>
+</body>
+</html>

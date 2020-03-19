@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+  	h2 {
+  		--alarm-color: darkred;
+  	}
+
+	:root {
+  		--alarm-color: crimson;
+  	}  	
+
+  	h2.alarm, div.alarm {
+  		color: var(--alarm-color, red);
+  	}
+  </style>
+  <title>Playground</title>
+</head>
+<body>
+<h1>CSS Variable Test</h1>
+
+<h2 class="alarm">The alarm one</h2>
+
+<div class="alarm">What happens here</div>
+</body>
+</html>
