@@ -12,6 +12,40 @@
     nav a:last-child::after {
       content: "";
     }
+
+    @media (max-width: 500px) {
+      th {
+        display: none;
+      }
+
+      tr, td {
+        display: block;
+      }
+
+      td:nth-child(1):not(:empty) {
+        font-weight: 600;
+        margin-top: 0.5em;
+      }
+
+      td:nth-child(2) {
+        margin-left: 1em;
+        padding-top: 0;
+      }
+
+      td:nth-child(3):not(:empty)::before {
+        content: "Required Reading ";
+        font-weight: 600;
+        display: block;
+      }
+
+      td:nth-child(3) {
+        margin-left: 1em;
+      }
+
+      td ul {
+        padding-left: 2em;
+      }
+    }
   </style>
   <title>Web Engineering SS21 -- TU Wien</title>
 </head>
@@ -167,8 +201,7 @@
                   </ol>
                 </details>
               </td>
-              <td>
-              </td>
+              <td></td>
             </tr>
 
             <!-- Lecture 4 -->
@@ -372,8 +405,7 @@
                   </summary>
                 </details>
               </td>
-              <td>
-              </td>
+              <td></td>
             </tr>
 
             <!-- Lecture 8 -->
@@ -442,8 +474,7 @@
                   </summary>
                 </details>
               </td>
-              <td>
-              </td>
+              <td></td>
             </tr>
 
             <!-- No lecture / tutor hour -->
