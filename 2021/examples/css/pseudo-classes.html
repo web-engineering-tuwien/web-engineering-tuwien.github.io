@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    .blog span:first-child {
+        font-size: 2rem;
+        font-weight: bold;
+        display:block;
+    }
+
+    .blog span:first-child::first-letter {
+        font-size: 4rem;
+    }
+
+    .blog span:nth-child(2) {
+        font-style: italic;
+    }
+
+    .blog span:last-child {
+        margin-top: 0.5em;
+        display: block;
+    }
+
+
+    .blog span:last-child:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .blog span:last-child:hover::after {
+        content: " (This is not a link)"
+    }
+
+    */
+
+
+  </style>
+  <title>Playground Pseudo Classes</title>
+</head>
+<body>
+    <h1>Pseudo Classes</h1>
+    <div class="blog">
+        <span>Blog Title</span>
+        <span>Second text</span>
+        <span>Normal text</span>
+        <span>Another normal text</span>
+        <span>Last Line</span>
+    </div>
+
+    <div>
+        <span>Outside span</span>
+    </div>
+</body>
+</html>
