@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        /* rem will be the same whereever you define it
+            em will differ based on parent font size */
+
+        .one-rem { font-size: 1rem; }
+        .two-rem { font-size: 2rem; }
+
+        .two-em { font-size: 1em; }
+        .two-em { font-size: 2em; }
+
+        .larger {
+            font-size: 25px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+    <title>Units Pt2: em vs rem</title>
+    </head>
+    <body>
+        <header>
+            <h1>Units Pt2: em vs rem</h1>
+        </header>
+        <section class="kata">
+            <div class="one-rem">1rem</div>
+            <div class="one-em">1em</div>
+
+            <div class="two-rem">2rem</div>
+            <div class="two-em">2em</div>
+
+            <div class="larger">
+                <div class="one-rem">1rem</div>
+                <div class="one-em">1em</div>
+
+                <div class="two-rem">2rem</div>
+                <div class="two-em">2em</div>
+            </div>
+        </section>
+    </body>
+</html>

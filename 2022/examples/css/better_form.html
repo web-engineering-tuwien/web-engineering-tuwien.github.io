@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            color: black;
+            background-color: lightblue;
+            padding: 50px 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flex-outer,
+        .flex-inner {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .flex-outer {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .flex-outer li,
+        .flex-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .flex-inner {
+            padding: 0 8px;
+            justify-content: space-between;
+        }
+
+        .flex-outer > li:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        .flex-outer li label,
+        .flex-outer li p {
+            padding: 8px;
+            font-weight: 300;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+        }
+
+        .flex-outer > li > label,
+        .flex-outer li p {
+            flex: 1 0 120px;
+            max-width: 220px;
+        }
+
+        .flex-outer > li > label + *,
+        .flex-inner {
+            flex: 1 0 220px;
+        }
+
+        .flex-outer li p {
+            margin: 0;
+        }
+
+        .flex-outer li input:not([type='checkbox']),
+        .flex-outer li textarea {
+            padding: 15px;
+            border: none;
+        }
+
+        .flex-outer li button {
+            margin-left: auto;
+            padding: 8px 16px;
+            border: none;
+            background: #333;
+            color: #f2f2f2;
+            text-transform: uppercase;
+            letter-spacing: .09em;
+            border-radius: 2px;
+        }
+
+        .flex-inner li {
+            width: 100px;
+        }
+    </style>
+    <title>Better Form</title>
+    </head>
+    <body>
+        <header>
+            <h1>Better Form</h1>
+        </header>
+        <section>
+            <form action="/register">
+                <ul class="flex-outer">
+                    <li>
+                      <label for="first-name">First Name</label>
+                      <input type="text" id="first-name" placeholder="First name here">
+                    </li>
+                    <li>
+                      <label for="last-name">Last Name</label>
+                      <input type="text" id="last-name" placeholder="Last name here">
+                    </li>
+                    <li>
+                      <label for="email">Email</label>
+                      <input type="email" id="email" placeholder="Email here">
+                    </li>
+                    <li>
+                      <label for="message">Message</label>
+                      <textarea rows="6" id="message" placeholder="Enter your message here"></textarea>
+                    </li>
+                    <li>
+                      <p>Age</p>
+                      <ul class="flex-inner">
+                        <li>
+                          <input type="checkbox" id="twenty-to-twentynine">
+                          <label for="twenty-to-twentynine">20-29</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" id="thirty-to-thirtynine">
+                          <label for="thirty-to-thirtynine">30-39</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="fourty-to-fourtynine">
+                            <label for="fourty-to-fourtynine">40-49</label>
+                          </li>
+                          <li>
+                            <input type="checkbox" id="fifty-to-fiftynine">
+                            <label for="fifty-to-fiftynine">50-59</label>
+                          </li>
+                          <li>
+                            <input type="checkbox" id="sixty-to-sixtynine">
+                            <label for="sixty-to-sixtynine">60-69</label>
+                          </li>
+                          <li>
+                            <input type="checkbox" id="other">
+                            <label for="other">Other</label>
+                          </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <button type="submit">Register</button>
+                    </li>
+                  </ul>
+            </form>
+        </section>
+    </body>
+</html>
