@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .kata div.box {
+            background-color: peru;
+            border: 2px solid black;
+            /*font-size: 2em;*/
+            margin-bottom: 10px;
+        }
+
+        .percent-box {
+            width: 50%;
+        }
+
+        .pixel-box {
+            width: 150px;
+        }
+
+        .viewport-box {
+            width: 50vw;
+        }
+
+        .outer-box {
+            width: 50%;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        /* add this later
+        html, body {
+            margin: 0;
+        }
+        /* */
+    </style>
+    <title>Units Pt1: Pixel vs. % vs. vw/vh</title>
+    </head>
+    <body>
+        <header>
+            <h1>Units Pt1: Pixel vs. % vs. vw/vh</h1>
+        </header>
+        <section class="kata">
+            <div class="box percent-box">
+                50%
+            </div>
+
+            <!-- add this later -->
+            <div class="box viewport-box">
+                50vw
+            </div>
+
+            <div class="box pixel-box">
+                150px
+            </div>
+
+            <div class="outer-box">
+                <div class="box percent-box">
+                    50%
+                </div>
+
+                <!-- add this later -->
+                <div class="box viewport-box">
+                    50vw
+                </div>
+
+                <div class="box pixel-box">
+                    150px
+                </div>
+
+                <div class="outer-box">
+                    <div class="box percent-box">
+                        50%
+                    </div>
+                    <div class="box pixel-box">
+                        150px
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

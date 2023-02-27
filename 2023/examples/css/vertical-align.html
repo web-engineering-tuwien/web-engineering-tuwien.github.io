@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .box {
+            width: 400px;
+            min-height: 100px;
+            border: 1px solid black;
+            margin: 20px;
+        }
+
+        .old-school1 {
+            position: relative;
+        }
+
+        .old-school1 div {
+            position: absolute;
+            margin: auto;
+            top: 0; bottom: 0; left: 0; right: 0;
+            text-align: center;
+            width: 50%;
+            height: 1em;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid1 {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid2 {
+            display: grid;
+            place-items: center;
+        }
+
+    </style>
+    <title>Vertically centering content</title>
+    </head>
+    <body>
+        <header>
+            <h1>Vertically centering content</h1>
+        </header>
+        <section class="kata">
+            <div class="box old-school1">
+                <div contenteditable>some interesting text</div>
+            </div>
+
+            <div class="box flex">
+                <div contenteditable>some interesting text</div>
+
+            </div>
+
+            <div class="box grid1">
+                <div contenteditable>some interesting text</div>
+            </div>
+
+            <div class="box grid2">
+                <div contenteditable>some interesting text</div>
+            </div>
+        </section>
+    </body>
+</html>
