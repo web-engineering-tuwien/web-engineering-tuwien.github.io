@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .box {
+            width: 400px;
+            min-height: 100px;
+            border: 1px solid black;
+            margin: 20px;
+        }
+
+        /* oldschool variant */
+        .old-school {
+            position: relative;
+        }
+
+        .old-school div {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            margin: auto;
+            text-align: center;
+            width: 50%;
+            height: 1em;
+        }
+
+        /* Flexbox variant */
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* 1st grid variant */        
+        .grid1 {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid2 {
+            display: grid;
+            place-items: center;
+        }
+    </style>
+    <title>Vertical Alignment -- Live from Vienna!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Vertical Alignment -- Live!</h1>
+        </header>
+
+        <section class="kata">
+
+            <div class="box old-school">
+                <div contenteditable>some text</div>
+            </div>        
+
+            <div class="box flex">
+                <div contenteditable>some text</div>
+
+                <div contenteditable>some text 2</div>
+            </div>        
+            
+            <div class="box grid1">
+                <div contenteditable>some text</div>
+            </div>        
+            
+            <div class="box grid2">
+                <div contenteditable>some text</div>
+            </div>                    
+        </section>
+
+
+    </body>
+</html>

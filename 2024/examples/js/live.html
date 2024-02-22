@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScript Live Lecture</title>
+        <script type="text/javascript">
+            async function getAllPokemonNames(number=151) {
+                if(!isFinite(number)) {
+                    number = 151
+                }
+                const url = `https://pokeapi.co/api/v2/pokemon?limit=${number}`
+                const response = await fetch(url)
+                const json = await response.json()
+                return json.results
+            }
+
+
+
+            //document.addEventListener('DOMContentLoaded', displayPokemonNames)
+            document.addEventListener('DOMContentLoaded', displayPokemonDetails)
+
+            async function getAllPokemonDetails(number=151) {
+                if(isNaN(number)) {
+                    number = 151
+                }
+                const url = `https://pokeapi.co/api/v2/pokemon?limit=${number}`
+                const response = await fetch(url)
+                const json = await response.json()
+                const pokemonDetails = {}
+
+                console.time("await in loop")
+                for(pokemon of json.results) {
+                    const detailResponse = await fetch(pokemon.url)
+                    const detail = await detailResponse.json()
+                    const abilities =
+                        detail.abilities.map(el => el.ability.name)
+                    pokemonDetails[pokemon.name] = abilities
+                }
+                console.log(pokemonDetails)
+                console.timeEnd("await in loop")
+
+
+                console.time("await with Promises.all")
+                const detailInfo = json.results.map(el => [el.name, el.url])
+                const details = await Promise.all(
+                    detailInfo.map(
+                        async NameUrl => {
+                            const detailResponse = await fetch(NameUrl[1])
+                            const detail = await detailResponse.json()
+                            return { 'name' : NameUrl[0],
+                                'abilities' : detail.abilities.map(el => el.ability.name) }
+                        }
+                    )
+                )
+                console.log(details)
+                console.timeEnd("await with Promises.all")
+            }
+
+            async function displayPokemonDetails(event) {
+                allPokemonDetails = await getAllPokemonDetails()
+            }
+
+            async function displayPokemonNames(event) {
+                pokemonNames = await getAllPokemonNames()
+                pokemonList = document.getElementById("pokemonList")
+                for(pokemon of pokemonNames) {
+                    pokemonList.appendChild(
+                        createListElement(pokemon.name)
+                    )
+                }
+            }
+
+            function createListElement(listContent) {
+                const li = document.createElement("li")
+                li.innerHTML = listContent
+                return li
+            }
+        </script>
+    </head>
+    <body>
+        <ul id="pokemonList">
+
+        </ul>
+    </body>
+</html>

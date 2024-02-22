@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .box {
+            width: 400px;
+            min-height: 100px;
+            border: 1px solid black;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .old-school {
+            position: relative;
+        }
+
+        .old-school * {
+            position: absolute;
+            margin: auto;
+            top: 0; bottom: 0; left: 0; right: 0;
+            text-align: center;
+            width: 50%;
+            height: 1em;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid1 {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid2 {
+            display: grid;
+            place-items: center;
+        }
+
+        h1[title] {
+            font-size: 4em;
+        }
+    </style>
+    <title>Vertically centering content</title>
+    </head>
+    <body>
+        <header>
+            <h1 title="something">Vertically centering content</h1>
+        </header>
+        <section>
+            <div class="box old-school">
+                <div contenteditable>
+                    old school
+                </div>
+            </div>
+
+            <div class="box flex">
+                <div contenteditable>
+                    flex
+                </div>
+                <div contenteditable>
+                    flex
+                </div>
+            </div>
+
+            <div class="box grid1">
+                <div contenteditable>
+                    grid 1
+                </div>
+                <div contenteditable>
+                    grid 1
+                </div>
+                <div contenteditable>
+                    grid 1
+                </div>
+                <div contenteditable>
+                    grid 1
+                </div>
+            </div>
+
+            <div class="box grid2">
+                <div contenteditable>
+                    grid 2
+                </div>
+                <div contenteditable>
+                    grid 2
+                </div>
+                <div contenteditable>
+                    grid 2
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .blog:first-child::first-letter {
+            font-size: 4rem;
+        }
+
+        .blog span:nth-child(2) {
+            font-style: italic;
+        }
+
+        .blog span:last-child {
+            margin-top: 1em; 
+            display: block;
+        }
+
+        .blog span:last-child:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .blog span:last-child:hover::after {
+            content: " (This is not a link)"
+        }        
+    </style>
+    <title>Pseudo Classes -- Live from Vienna!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Live!</h1>
+        </header>
+
+        <section class="kata">
+            <div class="blog">
+                <span>Blog Title</span>
+                <span>Second text</span>
+                <span> Normal text</span>
+                <span>Another normal text</span>
+                <span>Last line</span>
+            </div>
+
+            <div>
+                <span>Outside span</span>
+            </div>
+        </section>
+
+
+    </body>
+</html>

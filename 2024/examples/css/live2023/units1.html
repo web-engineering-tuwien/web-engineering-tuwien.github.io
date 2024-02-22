@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .kata div.box {
+            background-color: peru;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        
+        .percent-box {
+            width: 50%;
+            align-self: center;
+        }
+
+        .viewport-box {
+            width: 50vw;
+        }
+
+        .outer-box {
+            width: 50%;
+            display: flex; 
+            flex-direction: column;
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        .pixel-box {
+            width: 150px;
+        }
+
+        html, body {
+            margin: 0px;
+        }
+    </style>
+    <title>Fun with Units -- Live from Vienna!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Fun with Units! Percent and viewport</h1>
+        </header>
+
+        <section class="kata">
+            <div class="box percent-box">
+                50%
+            </div>
+
+            <div class="box viewport-box">
+                50vw
+            </div>
+
+            <div class="outer-box">
+                <div class="box percent-box">
+                    50%
+                </div>
+    
+                <div class="box viewport-box">
+                    50vw
+                </div>                
+            </div>
+
+            <div class="box pixel-box">
+                150px;
+            </div>
+        </section>
+
+
+    </body>
+</html>

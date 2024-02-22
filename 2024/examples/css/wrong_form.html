@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        table {
+            width: 800px;
+        }
+        tr:first-child {
+            width: 300px;
+        }
+
+        tr input, tr textarea {
+            width: 500px;
+        }
+
+        tr.checkbox input {
+            width: 100px;
+        }
+    </style>
+    <title>Non-accessible Table Forms</title>
+    </head>
+    <body>
+        <header>
+            <h1>Non-accessible Table Form</h1>
+        </header>
+        <section>
+            <form action="/register">
+                <table>
+                    <tr>
+                        <td>First Name</td>
+                        <td>
+                            <input name="firstname" type="text" value="First name here" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td>
+                            <input name="lastname" type="text" value="First name here" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>
+                            <input name="email" type="text" value="Email here" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Message</td>
+                        <td>
+                            <textarea rows="6" name="message" placeholder="Enter your message here"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="checkbox">
+                        <td>Age</td>
+                        <td>
+                            <input type="checkbox" id="other"> 18-29<br/>
+                            <input type="checkbox" id="other"> 30-39<br/>
+                            <input type="checkbox" id="other"> 40-49<br/>
+                            <input type="checkbox" id="other"> 50-59<br/>
+                            <input type="checkbox" id="other"> 60-69<br/>
+                            <input type="checkbox" name=""> Other
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Register" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </body>
+</html>

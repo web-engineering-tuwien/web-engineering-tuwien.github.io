@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .box {
+            background-color: peru;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+
+        .percent {
+            width: 50%;
+        }
+
+        .thirty-percent {
+            width: 30%;
+        }
+
+        .pixel {
+            width: 150px;
+        }
+
+        .viewport-box {
+            width: 50vw;
+            height: 10vh;
+        }
+
+        html, body {
+            margin: 20px;
+        }
+    </style>
+    <title>Units Pt1: Pixel vs. % vs. vw/vh</title>
+    </head>
+    <body>
+        <header>
+            <h1>Units Pt1: Pixel vs. % vs. vw/vh</h1>
+        </header>
+        <section>
+            <div class="box percent">
+                50%
+            </div>
+
+            <div class="box viewport-box">
+                50% vw, 10% vh
+            </div>
+
+            <div class="box pixel">
+                150px
+            </div>
+
+            <div class="outer-box thirty-percent box">
+                <div class="box percent">
+                    50%
+                </div>
+
+                <div class="box viewport-box">
+                    50% vw, 10% vh
+                </div>
+
+                <div class="box pixel">
+                    150px
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

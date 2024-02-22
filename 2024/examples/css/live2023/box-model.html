@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .outer-box {
+            left: 30%;
+            background-color: red;
+            border: 1px solid #fff0;
+            width: 100px;
+            min-height: 100px;
+            margin: 40px;
+        }
+
+        .inner-box {
+            padding: 5px;
+            height: 60px;
+            margin: 20px;
+            background-color: yellow;
+            box-sizing: border-box;
+        }        
+    </style>
+    <title>Box model -- Live from Vienna!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Box model</h1>
+        </header>
+
+        <section class="kata">
+            <div class="outer-box">
+                <div class="inner-box" contenteditable>
+                    Innerbox text 1
+                </div>
+            </div>
+            
+            <div class="outer-box">
+                <div class="inner-box" contenteditable>
+                    Innerbox text 2
+                </div>
+            </div>            
+        
+        </section>
+    </body>
+</html>
