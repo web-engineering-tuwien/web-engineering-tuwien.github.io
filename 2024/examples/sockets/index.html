@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon WebSocket Example</title>
+    <script defer>
+
+        // Establish WebSocket connection
+        const ws = new WebSocket('ws://localhost:3000/websocket');
+
+        // Connection opened
+        ws.onopen = event => {
+            console.log('WebSocket connection established.');
+
+            // Create JSON object
+            const data = {
+                type: 'join'
+            };
+
+            // Send JSON object as string
+            ws.send(JSON.stringify(data));
+        };
+
+        // Listen for messages
+        ws.onmessage = function(event) {
+            console.log(event.data);
+            const actionMessage = JSON.parse(event.data);
+            if (actionMessage.type === 'displayName') {
+                document.getElementById('displayName').innerText = actionMessage.name;
+                return;
+            }
+            if(actionMessage.type === 'newUser') {
+                add_chat_message('New user joined', actionMessage.name);
+                return;
+            }
+            if(actionMessage.type === 'userLeft') {
+                add_chat_message('User left', actionMessage.name);
+                return;
+            }            
+            if(actionMessage.type === 'chat') {
+                add_chat_message(actionMessage.name, actionMessage.message);
+                return;
+            }
+
+            console.error('Unknown message type: ' + event.data);
+        };
+
+        // Connection closed
+        ws.onclose = function(event) {
+            console.log('WebSocket connection closed.');
+        };
+
+        function add_chat_message(title, message) {
+            add_to_log(`<b>${title}</b>: ${message}`);
+        }
+
+        function add_to_log(message) {
+            const log = document.getElementById('chat');
+            const li = document.createElement('li');
+            // do not do this in real applications
+            // only for demo purposes -- this can lead to injection attacks
+            li.innerHTML = message;
+            log.appendChild(li);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('send').addEventListener('click', _ => {
+                const message = document.getElementById('message').value;
+                ws.send(JSON.stringify({
+                    type: 'chat',
+                    message: message
+                }));
+            });        
+        });
+        
+    </script>  
+</head>
+<body>
+    <h1>Pokemon Chat: WebSocket Example</h1>
+    
+    <div>
+        Your chat name: <span id="displayName"></span>
+    </div>
+    <input id="message" type="text" name="message" placeholder="Enter message">
+    <button id="send">Send</button>
+
+    <ul id="chat">
+    </ul>
+</body>
+</html>
